@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — DevHub Agency</title>
+    <meta name="description" content="Découvrez nos réalisations : sites web, outils internes et bases de données livrés à nos clients.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">DevHub</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Portfolio Header -->
+    <section class="portfolio-header">
+        <div class="container">
+            <h1>Nos réalisations</h1>
+            <p>Projets livrés à nos clients. Code propre, design moderne, propriété totale.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="site">Sites web</button>
+                <button class="filter-btn" data-filter="database">Bases de données</button>
+                <button class="filter-btn" data-filter="tool">Outils internes</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1: DevHub Agency (ce site) -->
+                <article class="portfolio-card" data-category="site">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <span class="placeholder-icon">⚡</span>
+                            <span class="placeholder-text">DevHub Agency</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a href="/" class="btn btn-white btn-sm">Voir le site →</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>DevHub Agency</h3>
+                        <p>Landing page de l'agence avec formulaire de devis interactif et estimation automatique. Design moderne et responsive.</p>
+                        <ul class="portfolio-features">
+                            <li>Landing page responsive</li>
+                            <li>Formulaire multi-étapes</li>
+                            <li>Estimation automatique</li>
+                            <li>Portfolio dynamique</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 2: Restaurant Le Provençal -->
+                <article class="portfolio-card" data-category="site">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);">
+                            <span class="placeholder-icon">🍽️</span>
+                            <span class="placeholder-text">Le Provençal</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="demo-badge">Démo</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>Restaurant Le Provençal</h3>
+                        <p>Site vitrine pour un restaurant avec menu interactif, galerie photos et formulaire de réservation.</p>
+                        <ul class="portfolio-features">
+                            <li>Menu digital responsive</li>
+                            <li>Galerie photos</li>
+                            <li>Formulaire de réservation</li>
+                            <li>Intégration Google Maps</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 3: Artisan Plomberie Martin -->
+                <article class="portfolio-card" data-category="site">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #1e3a5f 0%, #3d6b99 100%);">
+                            <span class="placeholder-icon">🔧</span>
+                            <span class="placeholder-text">Plomberie Martin</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="demo-badge">Démo</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>Plomberie Martin</h3>
+                        <p>Landing page pour artisan plombier avec présentation des services, zone d'intervention et demande de devis.</p>
+                        <ul class="portfolio-features">
+                            <li>Design professionnel</li>
+                            <li>Formulaire de contact</li>
+                            <li>Témoignages clients</li>
+                            <li>Optimisé SEO local</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 4: Gestion Clients Pro -->
+                <article class="portfolio-card" data-category="database">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #5c3d99 0%, #8b6cc4 100%);">
+                            <span class="placeholder-icon">👥</span>
+                            <span class="placeholder-text">Clients Pro</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="demo-badge">Démo</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-database">Base de données</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>Gestion Clients Pro</h3>
+                        <p>Interface de gestion de clientèle pour un consultant indépendant. Suivi des contacts, historique et export.</p>
+                        <ul class="portfolio-features">
+                            <li>CRUD complet</li>
+                            <li>Recherche et filtres</li>
+                            <li>Export CSV/Excel</li>
+                            <li>Interface intuitive</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 5: Suivi Commandes -->
+                <article class="portfolio-card" data-category="tool">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #994d00 0%, #cc8033 100%);">
+                            <span class="placeholder-icon">📦</span>
+                            <span class="placeholder-text">Suivi Commandes</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="demo-badge">Démo</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-tool">Outil interne</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>Suivi Commandes</h3>
+                        <p>Tableau de bord pour un e-commerçant permettant de suivre les commandes, leur statut et les délais de livraison.</p>
+                        <ul class="portfolio-features">
+                            <li>Dashboard temps réel</li>
+                            <li>Statuts personnalisés</li>
+                            <li>Notifications</li>
+                            <li>Rapports automatiques</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 6: Cabinet Avocat -->
+                <article class="portfolio-card" data-category="site">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
+                            <span class="placeholder-icon">⚖️</span>
+                            <span class="placeholder-text">Cabinet Droit</span>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <span class="demo-badge">Démo</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-tags">
+                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-year">2025</span>
+                        </div>
+                        <h3>Cabinet Maître Durand</h3>
+                        <p>Site professionnel pour un cabinet d'avocats avec présentation des domaines d'expertise et prise de rendez-vous.</p>
+                        <ul class="portfolio-features">
+                            <li>Design sobre et professionnel</li>
+                            <li>Domaines d'expertise</li>
+                            <li>Prise de rendez-vous</li>
+                            <li>Section actualités</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA -->
+            <div class="portfolio-cta">
+                <h3>Votre projet pourrait être ici</h3>
+                <p>Chaque projet est différent. Décrivez-nous le vôtre et recevez une estimation gratuite.</p>
+                <a href="devis.html" class="btn btn-primary btn-lg">Démarrer mon projet →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <span class="logo-icon">⚡</span>
+                        <span class="logo-text">DevHub</span>
+                    </a>
+                    <p>Solutions numériques clé en main pour entrepreneurs et PME.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="index.html#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Légal</h4>
+                        <ul>
+                            <li><a href="mentions-legales.html">Mentions légales</a></li>
+                            <li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 DevHub Agency. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>

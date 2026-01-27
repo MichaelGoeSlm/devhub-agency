@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation gratuite — DevHub Agency</title>
+    <meta name="description" content="Décrivez votre projet et recevez une estimation immédiate. Sans engagement.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">DevHub</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Formulaire de devis -->
+    <section class="estimate-section">
+        <div class="container">
+            <div class="estimate-wrapper">
+                <div class="estimate-header">
+                    <h1>Décrivez votre projet</h1>
+                    <p>Répondez à quelques questions simples. Pas besoin de termes techniques.</p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-steps">
+                        <div class="progress-step active" data-step="1">1</div>
+                        <div class="progress-step" data-step="2">2</div>
+                        <div class="progress-step" data-step="3">3</div>
+                        <div class="progress-step" data-step="4">4</div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="estimateForm" class="estimate-form">
+                    <!-- Step 1: Type de projet -->
+                    <div class="form-step active" data-step="1">
+                        <h2>Quel type de projet avez-vous en tête ?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="projectType" value="site-vitrine" required>
+                                <div class="option-content">
+                                    <span class="option-icon">🌐</span>
+                                    <span class="option-title">Site internet</span>
+                                    <span class="option-desc">Landing page, site vitrine</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="projectType" value="base-donnees">
+                                <div class="option-content">
+                                    <span class="option-icon">🗄️</span>
+                                    <span class="option-title">Base de données</span>
+                                    <span class="option-desc">Gérer clients, produits, etc.</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="projectType" value="outil-interne">
+                                <div class="option-content">
+                                    <span class="option-icon">⚙️</span>
+                                    <span class="option-title">Outil interne</span>
+                                    <span class="option-desc">Automatisation, tableau de bord</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="projectType" value="recreation-site">
+                                <div class="option-content">
+                                    <span class="option-icon">🔄</span>
+                                    <span class="option-title">Recréation de site</span>
+                                    <span class="option-desc">Refaire mon site existant</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Objectif -->
+                    <div class="form-step" data-step="2">
+                        <h2>Quel est votre objectif principal ?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="objective" value="vendre" required>
+                                <div class="option-content">
+                                    <span class="option-icon">💰</span>
+                                    <span class="option-title">Vendre</span>
+                                    <span class="option-desc">Générer des ventes ou des leads</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="objective" value="informer">
+                                <div class="option-content">
+                                    <span class="option-icon">📢</span>
+                                    <span class="option-title">Informer</span>
+                                    <span class="option-desc">Présenter mon activité</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="objective" value="gagner-temps">
+                                <div class="option-content">
+                                    <span class="option-icon">⏱️</span>
+                                    <span class="option-title">Gagner du temps</span>
+                                    <span class="option-desc">Automatiser, organiser</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="objective" value="autre">
+                                <div class="option-content">
+                                    <span class="option-icon">🎯</span>
+                                    <span class="option-title">Autre</span>
+                                    <span class="option-desc">Je vous expliquerai</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
+                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Délai -->
+                    <div class="form-step" data-step="3">
+                        <h2>Quel est votre délai idéal ?</h2>
+                        <div class="options-grid options-3">
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="urgent" required>
+                                <div class="option-content">
+                                    <span class="option-icon">🚀</span>
+                                    <span class="option-title">Urgent</span>
+                                    <span class="option-desc">Moins de 2 semaines</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="standard">
+                                <div class="option-content">
+                                    <span class="option-icon">📅</span>
+                                    <span class="option-title">Standard</span>
+                                    <span class="option-desc">2 à 4 semaines</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="timeline" value="flexible">
+                                <div class="option-content">
+                                    <span class="option-icon">🌿</span>
+                                    <span class="option-title">Flexible</span>
+                                    <span class="option-desc">Pas de date précise</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
+                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Secteur + Contact -->
+                    <div class="form-step" data-step="4">
+                        <h2>Dernières informations</h2>
+                        
+                        <div class="form-group">
+                            <label for="sector">Votre secteur d'activité</label>
+                            <select id="sector" name="sector" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="restauration">Restauration / Food</option>
+                                <option value="artisan">Artisan / Services</option>
+                                <option value="consulting">Consulting / Freelance</option>
+                                <option value="ecommerce">E-commerce / Vente</option>
+                                <option value="sante">Santé / Bien-être</option>
+                                <option value="immobilier">Immobilier</option>
+                                <option value="education">Éducation / Formation</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Votre nom</label>
+                                <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Votre email</label>
+                                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Décrivez brièvement votre projet <span class="optional">(optionnel)</span></label>
+                            <textarea id="description" name="description" rows="3" placeholder="Ex: Je voudrais un site pour présenter mon restaurant avec le menu et un formulaire de réservation..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inspiration">Exemples / inspirations <span class="optional">(optionnel)</span></label>
+                            <input type="text" id="inspiration" name="inspiration" placeholder="URLs de sites que vous aimez">
+                        </div>
+
+                        <div class="form-nav">
+                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
+                            <button type="submit" class="btn btn-primary">Voir mon estimation →</button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Result -->
+                <div id="estimateResult" class="estimate-result hidden">
+                    <div class="result-icon">✨</div>
+                    <h2>Votre estimation</h2>
+                    
+                    <div class="result-summary">
+                        <div class="result-project">
+                            <span class="result-label">Projet</span>
+                            <span class="result-value" id="resultProject">-</span>
+                        </div>
+                        <div class="result-objective">
+                            <span class="result-label">Objectif</span>
+                            <span class="result-value" id="resultObjective">-</span>
+                        </div>
+                        <div class="result-timeline">
+                            <span class="result-label">Délai</span>
+                            <span class="result-value" id="resultTimeline">-</span>
+                        </div>
+                    </div>
+
+                    <div class="result-price">
+                        <span class="price-label">Estimation</span>
+                        <span class="price-range" id="priceRange">-</span>
+                        <span class="price-note">* Fourchette indicative, devis précis sous 24h</span>
+                    </div>
+
+                    <div class="result-includes">
+                        <h4>Ce qui est inclus :</h4>
+                        <ul>
+                            <li>✓ Code 100% à vous (aucun enfermement)</li>
+                            <li>✓ 3 modifications gratuites</li>
+                            <li>✓ Déploiement sur DevHub.wiki</li>
+                            <li>✓ Documentation technique</li>
+                        </ul>
+                    </div>
+
+                    <div class="result-next">
+                        <div class="next-step-card">
+                            <span class="next-icon">📧</span>
+                            <div class="next-content">
+                                <h4>Prochaine étape</h4>
+                                <p>Nous vous envoyons un devis précis sous 24h à l'adresse <strong id="resultEmail">-</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+                        <button onclick="location.reload()" class="btn btn-primary">Nouveau projet</button>
+                    </div>
+
+                    <p class="result-disclaimer">
+                        <strong>Rappel :</strong> Paiement 100% à la commande après validation du devis. 
+                        Seul coût futur : hébergement (~5-15€/mois).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer footer-simple">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 DevHub Agency. <a href="mentions-legales.html">Mentions légales</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/estimate.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
