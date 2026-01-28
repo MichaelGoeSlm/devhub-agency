@@ -1347,8 +1347,9 @@ ul {
     border-color: var(--primary);
 }
 
-/* Mobile Navigation */
+/* Mobile Navigation - Hidden by default */
 .mobile-nav {
+    display: none;
     position: fixed;
     top: 70px;
     left: 0;
@@ -1356,17 +1357,11 @@ ul {
     background: var(--bg-white);
     padding: 24px;
     box-shadow: var(--shadow-md);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition-slow);
     z-index: 999;
 }
 
 .mobile-nav.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    display: block;
 }
 
 .mobile-nav-links li {
@@ -1431,10 +1426,6 @@ ul {
     
     .mobile-menu-btn {
         display: flex;
-    }
-    
-    .mobile-nav {
-        display: block;
     }
     
     .hero {
