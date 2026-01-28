@@ -58,6 +58,20 @@ const translations = {
         service_4_f2: "Design actualisé",
         service_4_f3: "Code que vous possédez",
         
+        // Service prices
+        service_1_price: "À partir de 900 €",
+        service_2_price: "À partir de 1 800 €",
+        service_3_price: "À partir de 2 500 €",
+        service_4_price: "À partir de 1 200 €",
+        
+        // About
+        about_title: "Qui est derrière DevHub ?",
+        about_desc: "Je suis Michael, développeur passionné basé entre la France et l'Argentine. J'ai créé DevHub pour offrir aux entrepreneurs et PME des solutions digitales de qualité, sans les prix exorbitants des agences traditionnelles.",
+        about_desc2: "Grâce à l'IA, je travaille plus vite — mais chaque ligne de code est relue, testée et validée par mes soins. Vous n'aurez jamais affaire à un robot sans supervision.",
+        about_stat1: "Satisfaction client",
+        about_stat2: "Réponse garantie",
+        about_stat3: "Mauvaise surprise",
+        
         // How it works
         how_title: "Comment ça marche",
         how_subtitle: "3 étapes simples pour obtenir votre solution",
@@ -313,6 +327,20 @@ const translations = {
         service_4_f2: "Updated design",
         service_4_f3: "Code you own",
         
+        // Service prices
+        service_1_price: "From $950",
+        service_2_price: "From $1,900",
+        service_3_price: "From $2,650",
+        service_4_price: "From $1,300",
+        
+        // About
+        about_title: "Who's behind DevHub?",
+        about_desc: "I'm Michael, a passionate developer based between France and Argentina. I created DevHub to offer entrepreneurs and SMBs quality digital solutions, without the exorbitant prices of traditional agencies.",
+        about_desc2: "Thanks to AI, I work faster — but every line of code is reviewed, tested and validated by me. You'll never deal with an unsupervised robot.",
+        about_stat1: "Client satisfaction",
+        about_stat2: "Guaranteed response",
+        about_stat3: "Bad surprise",
+        
         // How it works
         how_title: "How it works",
         how_subtitle: "3 simple steps to get your solution",
@@ -567,6 +595,20 @@ const translations = {
         service_4_f1: "Base nueva y limpia",
         service_4_f2: "Diseño actualizado",
         service_4_f3: "Código que posees",
+        
+        // Service prices
+        service_1_price: "Desde 900 €",
+        service_2_price: "Desde 1.800 €",
+        service_3_price: "Desde 2.500 €",
+        service_4_price: "Desde 1.200 €",
+        
+        // About
+        about_title: "¿Quién está detrás de DevHub?",
+        about_desc: "Soy Michael, desarrollador apasionado basado entre Francia y Argentina. Creé DevHub para ofrecer a emprendedores y PyMEs soluciones digitales de calidad, sin los precios exorbitantes de las agencias tradicionales.",
+        about_desc2: "Gracias a la IA, trabajo más rápido — pero cada línea de código es revisada, probada y validada por mí. Nunca tratarás con un robot sin supervisión.",
+        about_stat1: "Satisfacción cliente",
+        about_stat2: "Respuesta garantizada",
+        about_stat3: "Mala sorpresa",
         
         // How it works
         how_title: "Cómo funciona",
