@@ -67,18 +67,9 @@ function initMobileMenu() {
  * Language Selector
  */
 function initLangSelector() {
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const langToggle = document.querySelector('.lang-toggle');
-    const langCurrent = document.querySelector('.lang-current');
-    
-    // Update current language display
+    // Update all lang buttons active state
     function updateLangDisplay(lang) {
-        if (langCurrent) {
-            langCurrent.textContent = lang.toUpperCase();
-        }
-        
-        // Update all lang buttons active state
-        langButtons.forEach(btn => {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
     }
@@ -87,37 +78,25 @@ function initLangSelector() {
     const currentLang = localStorage.getItem('devhub-lang') || 'fr';
     updateLangDisplay(currentLang);
     
-    // Handle language button clicks
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
+    // Handle language button clicks (use event delegation for reliability)
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.lang-btn');
+        if (btn) {
+            e.preventDefault();
             const lang = btn.getAttribute('data-lang');
+            
+            // Call setLanguage from i18n.js
             if (typeof setLanguage === 'function') {
                 setLanguage(lang);
+            } else {
+                // Fallback: save to localStorage and reload
+                localStorage.setItem('devhub-lang', lang);
+                location.reload();
             }
-            updateLangDisplay(lang);
             
-            // Close mobile menu if open
-            const mobileNav = document.querySelector('.mobile-nav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            if (mobileNav) mobileNav.classList.remove('active');
-            if (menuBtn) menuBtn.classList.remove('active');
-        });
+            updateLangDisplay(lang);
+        }
     });
-    
-    // Desktop dropdown toggle on click (for touch devices)
-    if (langToggle) {
-        langToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            langToggle.closest('.lang-selector').classList.toggle('open');
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-            document.querySelectorAll('.lang-selector').forEach(el => {
-                el.classList.remove('open');
-            });
-        });
-    }
 }
 
 /**

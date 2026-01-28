@@ -1319,78 +1319,45 @@ ul {
     gap: 16px;
 }
 
-.lang-selector {
-    position: relative;
-}
-
-.lang-toggle {
+/* Inline language selector (desktop & mobile) */
+.lang-selector-inline,
+.mobile-lang-toggle {
     display: flex;
     align-items: center;
-    gap: 4px;
-    padding: 8px 12px;
-    background: transparent;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: var(--transition);
+    gap: 6px;
 }
 
-.lang-toggle:hover {
-    border-color: var(--primary);
-    color: var(--primary);
-}
-
-.lang-current {
-    min-width: 20px;
-}
-
-.lang-dropdown {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-md);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-8px);
-    transition: var(--transition);
-    z-index: 1001;
-    min-width: 140px;
-}
-
-.lang-selector:hover .lang-dropdown,
-.lang-selector.open .lang-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.lang-dropdown .lang-btn {
-    display: block;
-    width: 100%;
-    padding: 10px 16px;
-    text-align: left;
+.lang-selector-inline .lang-btn,
+.mobile-lang-toggle .lang-btn {
+    padding: 4px 8px;
     background: none;
     border: none;
-    font-size: 14px;
-    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
     cursor: pointer;
     transition: var(--transition);
 }
 
-.lang-dropdown .lang-btn:hover {
-    background: var(--bg-light);
-    color: var(--text-primary);
+.lang-selector-inline .lang-btn:hover,
+.mobile-lang-toggle .lang-btn:hover {
+    color: var(--primary);
 }
 
-.lang-dropdown .lang-btn.active {
-    color: var(--primary);
-    font-weight: 500;
+.lang-selector-inline .lang-btn.active,
+.mobile-lang-toggle .lang-btn.active {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.lang-sep {
+    color: var(--border);
+    font-size: 12px;
+}
+
+/* Hide mobile lang toggle on desktop */
+.mobile-lang-toggle {
+    display: none;
 }
 
 /* Mobile Navigation */
@@ -1413,10 +1380,6 @@ ul {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
-}
-
-.mobile-nav-links {
-    margin-bottom: 24px;
 }
 
 .mobile-nav-links li {
@@ -1451,37 +1414,6 @@ ul {
     color: white;
 }
 
-.mobile-lang {
-    display: flex;
-    gap: 8px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-}
-
-.mobile-lang .lang-btn {
-    flex: 1;
-    padding: 10px;
-    background: var(--bg-light);
-    border: 1px solid transparent;
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-}
-
-.mobile-lang .lang-btn:hover {
-    border-color: var(--border);
-}
-
-.mobile-lang .lang-btn.active {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
 /* ============================================
    Responsive Design
    ============================================ */
@@ -1512,6 +1444,10 @@ ul {
     }
     
     .mobile-menu-btn {
+        display: flex;
+    }
+    
+    .mobile-lang-toggle {
         display: flex;
     }
     
