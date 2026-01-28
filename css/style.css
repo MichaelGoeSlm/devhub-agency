@@ -1310,28 +1310,25 @@ ul {
 }
 
 /* ============================================
-   Language Selector
+   Language Selector (Mobile Menu Only)
    ============================================ */
 
-.nav-right {
+/* Language buttons inside mobile menu */
+.mobile-lang {
     display: flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 4px;
+    padding-top: 20px;
+    margin-top: 16px;
+    border-top: 1px solid var(--border-light);
 }
 
-/* Inline language selector (desktop & mobile) */
-.lang-selector-inline,
-.mobile-lang-toggle {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.lang-selector-inline .lang-btn,
-.mobile-lang-toggle .lang-btn {
-    padding: 4px 8px;
-    background: none;
-    border: none;
+.mobile-lang .lang-btn {
+    padding: 8px 14px;
+    background: var(--bg-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
     font-size: 13px;
     font-weight: 500;
     color: var(--text-muted);
@@ -1339,51 +1336,15 @@ ul {
     transition: var(--transition);
 }
 
-.lang-selector-inline .lang-btn:hover,
-.mobile-lang-toggle .lang-btn:hover {
-    color: var(--primary);
-}
-
-.lang-selector-inline .lang-btn.active,
-.mobile-lang-toggle .lang-btn.active {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-.lang-sep {
-    color: var(--border);
-    font-size: 12px;
-}
-
-/* Language inside mobile menu */
-.mobile-lang {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding-top: 20px;
-    margin-top: 16px;
-    border-top: 1px solid var(--border-light);
-}
-
-.mobile-lang .lang-btn {
-    padding: 6px 12px;
-    background: none;
-    border: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-muted);
-    cursor: pointer;
-    transition: var(--transition);
-}
-
 .mobile-lang .lang-btn:hover {
-    color: var(--primary);
+    border-color: var(--border);
+    color: var(--text-secondary);
 }
 
 .mobile-lang .lang-btn.active {
-    color: var(--text-primary);
-    font-weight: 600;
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
 }
 
 /* Mobile Navigation */
@@ -1460,8 +1421,7 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .navbar .btn,
-    .nav-right {
+    .nav-cta-btn {
         display: none;
     }
     
