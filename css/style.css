@@ -1310,6 +1310,179 @@ ul {
 }
 
 /* ============================================
+   Language Selector
+   ============================================ */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.lang-selector {
+    position: relative;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-toggle:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.lang-current {
+    min-width: 20px;
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: var(--transition);
+    z-index: 1001;
+    min-width: 140px;
+}
+
+.lang-selector:hover .lang-dropdown,
+.lang-selector.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-dropdown .lang-btn {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-dropdown .lang-btn:hover {
+    background: var(--bg-light);
+    color: var(--text-primary);
+}
+
+.lang-dropdown .lang-btn.active {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--bg-white);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-slow);
+    z-index: 999;
+}
+
+.mobile-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-links {
+    margin-bottom: 24px;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 8px;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-nav-links a:hover {
+    color: var(--primary);
+}
+
+.mobile-nav-links .mobile-cta {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 14px 24px;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius);
+    border-bottom: none;
+}
+
+.mobile-nav-links .mobile-cta:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+.mobile-lang {
+    display: flex;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.mobile-lang .lang-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--bg-light);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.mobile-lang .lang-btn:hover {
+    border-color: var(--border);
+}
+
+.mobile-lang .lang-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* ============================================
    Responsive Design
    ============================================ */
 
@@ -1329,7 +1502,8 @@ ul {
 }
 
 @media (max-width: 768px) {
-    .navbar .btn {
+    .navbar .btn,
+    .nav-right {
         display: none;
     }
     
@@ -1339,6 +1513,10 @@ ul {
     
     .mobile-menu-btn {
         display: flex;
+    }
+    
+    .mobile-nav {
+        display: block;
     }
     
     .hero {

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="devis">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -18,12 +18,26 @@
                 <span class="logo-text">DevHub</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+                <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
             </ul>
-            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <div class="nav-right">
+                <a href="devis.html" class="btn btn-primary" data-i18n="nav_cta">Obtenir une estimation</a>
+                <!-- Language Selector (Desktop) -->
+                <div class="lang-selector">
+                    <button class="lang-toggle" aria-label="Language">
+                        <span class="lang-current">FR</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                    </div>
+                </div>
+            </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -32,13 +46,29 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+            <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="devis.html" class="mobile-cta" data-i18n="nav_cta">Obtenir une estimation</a></li>
+        </ul>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+
     <!-- Formulaire de devis -->
     <section class="estimate-section">
         <div class="container">
             <div class="estimate-wrapper">
                 <div class="estimate-header">
-                    <h1>Décrivez votre projet</h1>
-                    <p>Répondez à quelques questions simples. Pas besoin de termes techniques.</p>
+                    <h1 data-i18n="devis_h1">Décrivez votre projet</h1>
+                    <p data-i18n="devis_subtitle">Répondez à quelques questions simples. Pas besoin de termes techniques.</p>
                 </div>
 
                 <!-- Progress Bar -->
@@ -56,167 +86,167 @@
                 <form id="estimateForm" class="estimate-form">
                     <!-- Step 1: Type de projet -->
                     <div class="form-step active" data-step="1">
-                        <h2>Quel type de projet avez-vous en tête ?</h2>
+                        <h2 data-i18n="step1_title">Quel type de projet avez-vous en tête ?</h2>
                         <div class="options-grid">
                             <label class="option-card">
                                 <input type="radio" name="projectType" value="site-vitrine" required>
                                 <div class="option-content">
                                     <span class="option-icon">🌐</span>
-                                    <span class="option-title">Site internet</span>
-                                    <span class="option-desc">Landing page, site vitrine</span>
+                                    <span class="option-title" data-i18n="step1_opt1_title">Site internet</span>
+                                    <span class="option-desc" data-i18n="step1_opt1_desc">Landing page, site vitrine</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="projectType" value="base-donnees">
                                 <div class="option-content">
                                     <span class="option-icon">🗄️</span>
-                                    <span class="option-title">Base de données</span>
-                                    <span class="option-desc">Gérer clients, produits, etc.</span>
+                                    <span class="option-title" data-i18n="step1_opt2_title">Base de données</span>
+                                    <span class="option-desc" data-i18n="step1_opt2_desc">Gérer clients, produits, etc.</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="projectType" value="outil-interne">
                                 <div class="option-content">
                                     <span class="option-icon">⚙️</span>
-                                    <span class="option-title">Outil interne</span>
-                                    <span class="option-desc">Automatisation, tableau de bord</span>
+                                    <span class="option-title" data-i18n="step1_opt3_title">Outil interne</span>
+                                    <span class="option-desc" data-i18n="step1_opt3_desc">Automatisation, tableau de bord</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="projectType" value="recreation-site">
                                 <div class="option-content">
                                     <span class="option-icon">🔄</span>
-                                    <span class="option-title">Recréation de site</span>
-                                    <span class="option-desc">Refaire mon site existant</span>
+                                    <span class="option-title" data-i18n="step1_opt4_title">Recréation de site</span>
+                                    <span class="option-desc" data-i18n="step1_opt4_desc">Refaire mon site existant</span>
                                 </div>
                             </label>
                         </div>
                         <div class="form-nav">
-                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                            <button type="button" class="btn btn-primary btn-next" disabled data-i18n="btn_continue">Continuer →</button>
                         </div>
                     </div>
 
                     <!-- Step 2: Objectif -->
                     <div class="form-step" data-step="2">
-                        <h2>Quel est votre objectif principal ?</h2>
+                        <h2 data-i18n="step2_title">Quel est votre objectif principal ?</h2>
                         <div class="options-grid">
                             <label class="option-card">
                                 <input type="radio" name="objective" value="vendre" required>
                                 <div class="option-content">
                                     <span class="option-icon">💰</span>
-                                    <span class="option-title">Vendre</span>
-                                    <span class="option-desc">Générer des ventes ou des leads</span>
+                                    <span class="option-title" data-i18n="step2_opt1_title">Vendre</span>
+                                    <span class="option-desc" data-i18n="step2_opt1_desc">Générer des ventes ou des leads</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="objective" value="informer">
                                 <div class="option-content">
                                     <span class="option-icon">📢</span>
-                                    <span class="option-title">Informer</span>
-                                    <span class="option-desc">Présenter mon activité</span>
+                                    <span class="option-title" data-i18n="step2_opt2_title">Informer</span>
+                                    <span class="option-desc" data-i18n="step2_opt2_desc">Présenter mon activité</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="objective" value="gagner-temps">
                                 <div class="option-content">
                                     <span class="option-icon">⏱️</span>
-                                    <span class="option-title">Gagner du temps</span>
-                                    <span class="option-desc">Automatiser, organiser</span>
+                                    <span class="option-title" data-i18n="step2_opt3_title">Gagner du temps</span>
+                                    <span class="option-desc" data-i18n="step2_opt3_desc">Automatiser, organiser</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="objective" value="autre">
                                 <div class="option-content">
                                     <span class="option-icon">🎯</span>
-                                    <span class="option-title">Autre</span>
-                                    <span class="option-desc">Je vous expliquerai</span>
+                                    <span class="option-title" data-i18n="step2_opt4_title">Autre</span>
+                                    <span class="option-desc" data-i18n="step2_opt4_desc">Je vous expliquerai</span>
                                 </div>
                             </label>
                         </div>
                         <div class="form-nav">
-                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
-                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                            <button type="button" class="btn btn-secondary btn-prev" data-i18n="btn_back">← Retour</button>
+                            <button type="button" class="btn btn-primary btn-next" disabled data-i18n="btn_continue">Continuer →</button>
                         </div>
                     </div>
 
                     <!-- Step 3: Délai -->
                     <div class="form-step" data-step="3">
-                        <h2>Quel est votre délai idéal ?</h2>
+                        <h2 data-i18n="step3_title">Quel est votre délai idéal ?</h2>
                         <div class="options-grid options-3">
                             <label class="option-card">
                                 <input type="radio" name="timeline" value="urgent" required>
                                 <div class="option-content">
                                     <span class="option-icon">🚀</span>
-                                    <span class="option-title">Urgent</span>
-                                    <span class="option-desc">Moins de 2 semaines</span>
+                                    <span class="option-title" data-i18n="step3_opt1_title">Urgent</span>
+                                    <span class="option-desc" data-i18n="step3_opt1_desc">Moins de 2 semaines</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="timeline" value="standard">
                                 <div class="option-content">
                                     <span class="option-icon">📅</span>
-                                    <span class="option-title">Standard</span>
-                                    <span class="option-desc">2 à 4 semaines</span>
+                                    <span class="option-title" data-i18n="step3_opt2_title">Standard</span>
+                                    <span class="option-desc" data-i18n="step3_opt2_desc">2 à 4 semaines</span>
                                 </div>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="timeline" value="flexible">
                                 <div class="option-content">
                                     <span class="option-icon">🌿</span>
-                                    <span class="option-title">Flexible</span>
-                                    <span class="option-desc">Pas de date précise</span>
+                                    <span class="option-title" data-i18n="step3_opt3_title">Flexible</span>
+                                    <span class="option-desc" data-i18n="step3_opt3_desc">Pas de date précise</span>
                                 </div>
                             </label>
                         </div>
                         <div class="form-nav">
-                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
-                            <button type="button" class="btn btn-primary btn-next" disabled>Continuer →</button>
+                            <button type="button" class="btn btn-secondary btn-prev" data-i18n="btn_back">← Retour</button>
+                            <button type="button" class="btn btn-primary btn-next" disabled data-i18n="btn_continue">Continuer →</button>
                         </div>
                     </div>
 
                     <!-- Step 4: Secteur + Contact -->
                     <div class="form-step" data-step="4">
-                        <h2>Dernières informations</h2>
+                        <h2 data-i18n="step4_title">Dernières informations</h2>
                         
                         <div class="form-group">
-                            <label for="sector">Votre secteur d'activité</label>
+                            <label for="sector" data-i18n="step4_sector">Votre secteur d'activité</label>
                             <select id="sector" name="sector" required>
-                                <option value="">Sélectionnez...</option>
-                                <option value="restauration">Restauration / Food</option>
-                                <option value="artisan">Artisan / Services</option>
-                                <option value="consulting">Consulting / Freelance</option>
-                                <option value="ecommerce">E-commerce / Vente</option>
-                                <option value="sante">Santé / Bien-être</option>
-                                <option value="immobilier">Immobilier</option>
-                                <option value="education">Éducation / Formation</option>
-                                <option value="autre">Autre</option>
+                                <option value="" data-i18n="step4_sector_select">Sélectionnez...</option>
+                                <option value="restauration" data-i18n="step4_sector_resto">Restauration / Food</option>
+                                <option value="artisan" data-i18n="step4_sector_artisan">Artisan / Services</option>
+                                <option value="consulting" data-i18n="step4_sector_consulting">Consulting / Freelance</option>
+                                <option value="ecommerce" data-i18n="step4_sector_ecommerce">E-commerce / Vente</option>
+                                <option value="sante" data-i18n="step4_sector_health">Santé / Bien-être</option>
+                                <option value="immobilier" data-i18n="step4_sector_realestate">Immobilier</option>
+                                <option value="education" data-i18n="step4_sector_education">Éducation / Formation</option>
+                                <option value="autre" data-i18n="step4_sector_other">Autre</option>
                             </select>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Votre nom</label>
-                                <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                                <label for="name" data-i18n="step4_name">Votre nom</label>
+                                <input type="text" id="name" name="name" data-i18n-placeholder="step4_name_placeholder" placeholder="Jean Dupont" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Votre email</label>
-                                <input type="email" id="email" name="email" placeholder="jean@exemple.com" required>
+                                <label for="email" data-i18n="step4_email">Votre email</label>
+                                <input type="email" id="email" name="email" data-i18n-placeholder="step4_email_placeholder" placeholder="jean@exemple.com" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Décrivez brièvement votre projet <span class="optional">(optionnel)</span></label>
-                            <textarea id="description" name="description" rows="3" placeholder="Ex: Je voudrais un site pour présenter mon restaurant avec le menu et un formulaire de réservation..."></textarea>
+                            <label for="description"><span data-i18n="step4_desc">Décrivez brièvement votre projet</span> <span class="optional" data-i18n="optional">(optionnel)</span></label>
+                            <textarea id="description" name="description" rows="3" data-i18n-placeholder="step4_desc_placeholder" placeholder="Ex: Je voudrais un site pour présenter mon restaurant avec le menu et un formulaire de réservation..."></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label for="inspiration">Exemples / inspirations <span class="optional">(optionnel)</span></label>
-                            <input type="text" id="inspiration" name="inspiration" placeholder="URLs de sites que vous aimez">
+                            <label for="inspiration"><span data-i18n="step4_inspiration">Exemples / inspirations</span> <span class="optional" data-i18n="optional">(optionnel)</span></label>
+                            <input type="text" id="inspiration" name="inspiration" data-i18n-placeholder="step4_inspiration_placeholder" placeholder="URLs de sites que vous aimez">
                         </div>
 
                         <div class="form-nav">
-                            <button type="button" class="btn btn-secondary btn-prev">← Retour</button>
-                            <button type="submit" class="btn btn-primary">Voir mon estimation →</button>
+                            <button type="button" class="btn btn-secondary btn-prev" data-i18n="btn_back">← Retour</button>
+                            <button type="submit" class="btn btn-primary" data-i18n="btn_see_estimate">Voir mon estimation →</button>
                         </div>
                     </div>
                 </form>
@@ -224,36 +254,36 @@
                 <!-- Result -->
                 <div id="estimateResult" class="estimate-result hidden">
                     <div class="result-icon">✨</div>
-                    <h2>Votre estimation</h2>
+                    <h2 data-i18n="result_title">Votre estimation</h2>
                     
                     <div class="result-summary">
                         <div class="result-project">
-                            <span class="result-label">Projet</span>
+                            <span class="result-label" data-i18n="result_project">Projet</span>
                             <span class="result-value" id="resultProject">-</span>
                         </div>
                         <div class="result-objective">
-                            <span class="result-label">Objectif</span>
+                            <span class="result-label" data-i18n="result_objective">Objectif</span>
                             <span class="result-value" id="resultObjective">-</span>
                         </div>
                         <div class="result-timeline">
-                            <span class="result-label">Délai</span>
+                            <span class="result-label" data-i18n="result_timeline">Délai</span>
                             <span class="result-value" id="resultTimeline">-</span>
                         </div>
                     </div>
 
                     <div class="result-price">
-                        <span class="price-label">Estimation</span>
+                        <span class="price-label" data-i18n="result_price_label">Estimation</span>
                         <span class="price-range" id="priceRange">-</span>
-                        <span class="price-note">* Fourchette indicative, devis précis sous 24h</span>
+                        <span class="price-note" data-i18n="result_price_note">* Fourchette indicative, devis précis sous 24h</span>
                     </div>
 
                     <div class="result-includes">
-                        <h4>Ce qui est inclus :</h4>
+                        <h4 data-i18n="result_includes_title">Ce qui est inclus :</h4>
                         <ul>
-                            <li>✓ Code 100% à vous (aucun enfermement)</li>
-                            <li>✓ 3 modifications gratuites</li>
-                            <li>✓ Déploiement sur DevHub.wiki</li>
-                            <li>✓ Documentation technique</li>
+                            <li>✓ <span data-i18n="result_include_1">Code 100% à vous (aucun enfermement)</span></li>
+                            <li>✓ <span data-i18n="result_include_2">3 modifications gratuites</span></li>
+                            <li>✓ <span data-i18n="result_include_3">Déploiement sur DevHub.wiki</span></li>
+                            <li>✓ <span data-i18n="result_include_4">Documentation technique</span></li>
                         </ul>
                     </div>
 
@@ -261,20 +291,19 @@
                         <div class="next-step-card">
                             <span class="next-icon">📧</span>
                             <div class="next-content">
-                                <h4>Prochaine étape</h4>
-                                <p>Nous vous envoyons un devis précis sous 24h à l'adresse <strong id="resultEmail">-</strong></p>
+                                <h4 data-i18n="result_next_title">Prochaine étape</h4>
+                                <p><span data-i18n="result_next_text">Nous vous envoyons un devis précis sous 24h à l'adresse</span> <strong id="resultEmail">-</strong></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="result-actions">
-                        <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
-                        <button onclick="location.reload()" class="btn btn-primary">Nouveau projet</button>
+                        <a href="/" class="btn btn-secondary" data-i18n="result_back_home">Retour à l'accueil</a>
+                        <button onclick="location.reload()" class="btn btn-primary" data-i18n="result_new_project">Nouveau projet</button>
                     </div>
 
-                    <p class="result-disclaimer">
-                        <strong>Rappel :</strong> Paiement 100% à la commande après validation du devis. 
-                        Seul coût futur : hébergement (~5-15€/mois).
+                    <p class="result-disclaimer" data-i18n="result_disclaimer">
+                        Paiement 100% à la commande après validation du devis. Seul coût futur : hébergement (~5-15€/mois).
                     </p>
                 </div>
             </div>
@@ -285,11 +314,12 @@
     <footer class="footer footer-simple">
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 DevHub Agency. <a href="mentions-legales.html">Mentions légales</a></p>
+                <p><span data-i18n="footer_copyright">© 2025 DevHub Agency.</span> <a href="mentions-legales.html" data-i18n="footer_mentions">Mentions légales</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/estimate.js"></script>
     <script src="js/main.js"></script>
 </body>

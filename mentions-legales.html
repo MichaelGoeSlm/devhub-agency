@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="legal">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -17,12 +17,26 @@
                 <span class="logo-text">DevHub</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+                <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
             </ul>
-            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <div class="nav-right">
+                <a href="devis.html" class="btn btn-primary" data-i18n="nav_cta">Obtenir une estimation</a>
+                <!-- Language Selector (Desktop) -->
+                <div class="lang-selector">
+                    <button class="lang-toggle" aria-label="Language">
+                        <span class="lang-current">FR</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                    </div>
+                </div>
+            </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -31,15 +45,31 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+            <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="devis.html" class="mobile-cta" data-i18n="nav_cta">Obtenir une estimation</a></li>
+        </ul>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+
     <!-- Legal Content -->
     <section class="legal-section">
         <div class="container">
             <div class="legal-content">
-                <h1>Mentions légales</h1>
-                <p class="legal-update">Dernière mise à jour : Janvier 2025</p>
+                <h1 data-i18n="legal_title">Mentions légales</h1>
+                <p class="legal-update" data-i18n="legal_update">Dernière mise à jour : Janvier 2025</p>
 
                 <section class="legal-block">
-                    <h2>1. Éditeur du site</h2>
+                    <h2 data-i18n="legal_1_title">1. Éditeur du site</h2>
                     <p>
                         <strong>DevHub Agency</strong><br>
                         Micro-entreprise<br>
@@ -52,7 +82,7 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>2. Hébergement</h2>
+                    <h2 data-i18n="legal_2_title">2. Hébergement</h2>
                     <p>
                         Ce site est hébergé par :<br>
                         <strong>DevHub.wiki</strong><br>
@@ -61,7 +91,7 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>3. Propriété intellectuelle</h2>
+                    <h2 data-i18n="legal_3_title">3. Propriété intellectuelle</h2>
                     <p>
                         L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive de DevHub Agency, sauf mention contraire.
                     </p>
@@ -71,7 +101,7 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>4. Transparence sur l'usage de l'IA</h2>
+                    <h2 data-i18n="legal_4_title">4. Transparence sur l'usage de l'IA</h2>
                     <p>
                         DevHub Agency utilise des outils d'intelligence artificielle (IA) dans le cadre de ses prestations. Cette utilisation constitue un avantage permettant de proposer des services rapides et accessibles.
                     </p>
@@ -86,7 +116,7 @@
                 </section>
 
                 <section class="legal-block" id="confidentialite">
-                    <h2>5. Politique de confidentialité</h2>
+                    <h2 data-i18n="legal_5_title">5. Politique de confidentialité</h2>
                     
                     <h3>Données collectées</h3>
                     <p>
@@ -120,14 +150,14 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>6. Cookies</h2>
+                    <h2 data-i18n="legal_6_title">6. Cookies</h2>
                     <p>
                         Ce site n'utilise pas de cookies de tracking ou publicitaires. Seuls des cookies techniques essentiels au fonctionnement du site peuvent être utilisés.
                     </p>
                 </section>
 
                 <section class="legal-block">
-                    <h2>7. Conditions de vente</h2>
+                    <h2 data-i18n="legal_7_title">7. Conditions de vente</h2>
                     
                     <h3>Paiement</h3>
                     <p>
@@ -151,7 +181,7 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>8. Limitation de responsabilité</h2>
+                    <h2 data-i18n="legal_8_title">8. Limitation de responsabilité</h2>
                     <p>
                         DevHub Agency ne saurait être tenue responsable des dommages directs ou indirects résultant de l'utilisation du site ou des services fournis.
                     </p>
@@ -161,7 +191,7 @@
                 </section>
 
                 <section class="legal-block">
-                    <h2>9. Contact</h2>
+                    <h2 data-i18n="legal_9_title">9. Contact</h2>
                     <p>
                         Pour toute question concernant ces mentions légales :<br>
                         Email : contact@devhub.wiki
@@ -175,11 +205,12 @@
     <footer class="footer footer-simple">
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2025 DevHub Agency. <a href="/">Retour à l'accueil</a></p>
+                <p><span data-i18n="footer_copyright">© 2025 DevHub Agency.</span> <a href="/" data-i18n="legal_back">Retour à l'accueil</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

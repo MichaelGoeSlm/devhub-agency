@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="portfolio">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -18,12 +18,26 @@
                 <span class="logo-text">DevHub</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                <li><a href="portfolio.html" class="active" data-i18n="nav_portfolio">Portfolio</a></li>
+                <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
             </ul>
-            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <div class="nav-right">
+                <a href="devis.html" class="btn btn-primary" data-i18n="nav_cta">Obtenir une estimation</a>
+                <!-- Language Selector (Desktop) -->
+                <div class="lang-selector">
+                    <button class="lang-toggle" aria-label="Language">
+                        <span class="lang-current">FR</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                    </div>
+                </div>
+            </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -32,11 +46,27 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+            <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="devis.html" class="mobile-cta" data-i18n="nav_cta">Obtenir une estimation</a></li>
+        </ul>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+
     <!-- Portfolio Header -->
     <section class="portfolio-header">
         <div class="container">
-            <h1>Nos réalisations</h1>
-            <p>Projets livrés à nos clients. Code propre, design moderne, propriété totale.</p>
+            <h1 data-i18n="portfolio_title">Nos réalisations</h1>
+            <p data-i18n="portfolio_subtitle">Projets livrés à nos clients. Code propre, design moderne, propriété totale.</p>
         </div>
     </section>
 
@@ -45,10 +75,10 @@
         <div class="container">
             <!-- Filters -->
             <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="site">Sites web</button>
-                <button class="filter-btn" data-filter="database">Bases de données</button>
-                <button class="filter-btn" data-filter="tool">Outils internes</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tous</button>
+                <button class="filter-btn" data-filter="site" data-i18n="filter_sites">Sites web</button>
+                <button class="filter-btn" data-filter="database" data-i18n="filter_databases">Bases de données</button>
+                <button class="filter-btn" data-filter="tool" data-i18n="filter_tools">Outils internes</button>
             </div>
 
             <!-- Projects Grid -->
@@ -61,21 +91,21 @@
                             <span class="placeholder-text">DevHub Agency</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <a href="/" class="btn btn-white btn-sm">Voir le site →</a>
+                            <a href="/" class="btn btn-white btn-sm" data-i18n="see_site">Voir le site →</a>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-site" data-i18n="tag_site">Site web</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>DevHub Agency</h3>
-                        <p>Landing page de l'agence avec formulaire de devis interactif et estimation automatique. Design moderne et responsive.</p>
+                        <h3 data-i18n="proj1_title">DevHub Agency</h3>
+                        <p data-i18n="proj1_desc">Landing page de l'agence avec formulaire de devis interactif et estimation automatique. Design moderne et responsive.</p>
                         <ul class="portfolio-features">
-                            <li>Landing page responsive</li>
-                            <li>Formulaire multi-étapes</li>
-                            <li>Estimation automatique</li>
-                            <li>Portfolio dynamique</li>
+                            <li data-i18n="proj1_f1">Landing page responsive</li>
+                            <li data-i18n="proj1_f2">Formulaire multi-étapes</li>
+                            <li data-i18n="proj1_f3">Estimation automatique</li>
+                            <li data-i18n="proj1_f4">Portfolio dynamique</li>
                         </ul>
                     </div>
                 </article>
@@ -88,21 +118,21 @@
                             <span class="placeholder-text">Le Provençal</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <span class="demo-badge">Démo</span>
+                            <span class="demo-badge" data-i18n="demo_badge">Démo</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-site" data-i18n="tag_site">Site web</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>Restaurant Le Provençal</h3>
-                        <p>Site vitrine pour un restaurant avec menu interactif, galerie photos et formulaire de réservation.</p>
+                        <h3 data-i18n="proj2_title">Restaurant Le Provençal</h3>
+                        <p data-i18n="proj2_desc">Site vitrine pour un restaurant avec menu interactif, galerie photos et formulaire de réservation.</p>
                         <ul class="portfolio-features">
-                            <li>Menu digital responsive</li>
-                            <li>Galerie photos</li>
-                            <li>Formulaire de réservation</li>
-                            <li>Intégration Google Maps</li>
+                            <li data-i18n="proj2_f1">Menu digital responsive</li>
+                            <li data-i18n="proj2_f2">Galerie photos</li>
+                            <li data-i18n="proj2_f3">Formulaire de réservation</li>
+                            <li data-i18n="proj2_f4">Intégration Google Maps</li>
                         </ul>
                     </div>
                 </article>
@@ -115,21 +145,21 @@
                             <span class="placeholder-text">Plomberie Martin</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <span class="demo-badge">Démo</span>
+                            <span class="demo-badge" data-i18n="demo_badge">Démo</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-site" data-i18n="tag_site">Site web</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>Plomberie Martin</h3>
-                        <p>Landing page pour artisan plombier avec présentation des services, zone d'intervention et demande de devis.</p>
+                        <h3 data-i18n="proj3_title">Plomberie Martin</h3>
+                        <p data-i18n="proj3_desc">Landing page pour artisan plombier avec présentation des services, zone d'intervention et demande de devis.</p>
                         <ul class="portfolio-features">
-                            <li>Design professionnel</li>
-                            <li>Formulaire de contact</li>
-                            <li>Témoignages clients</li>
-                            <li>Optimisé SEO local</li>
+                            <li data-i18n="proj3_f1">Design professionnel</li>
+                            <li data-i18n="proj3_f2">Formulaire de contact</li>
+                            <li data-i18n="proj3_f3">Témoignages clients</li>
+                            <li data-i18n="proj3_f4">Optimisé SEO local</li>
                         </ul>
                     </div>
                 </article>
@@ -142,21 +172,21 @@
                             <span class="placeholder-text">Clients Pro</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <span class="demo-badge">Démo</span>
+                            <span class="demo-badge" data-i18n="demo_badge">Démo</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-database">Base de données</span>
+                            <span class="tag tag-database" data-i18n="tag_database">Base de données</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>Gestion Clients Pro</h3>
-                        <p>Interface de gestion de clientèle pour un consultant indépendant. Suivi des contacts, historique et export.</p>
+                        <h3 data-i18n="proj4_title">Gestion Clients Pro</h3>
+                        <p data-i18n="proj4_desc">Interface de gestion de clientèle pour un consultant indépendant. Suivi des contacts, historique et export.</p>
                         <ul class="portfolio-features">
-                            <li>CRUD complet</li>
-                            <li>Recherche et filtres</li>
-                            <li>Export CSV/Excel</li>
-                            <li>Interface intuitive</li>
+                            <li data-i18n="proj4_f1">CRUD complet</li>
+                            <li data-i18n="proj4_f2">Recherche et filtres</li>
+                            <li data-i18n="proj4_f3">Export CSV/Excel</li>
+                            <li data-i18n="proj4_f4">Interface intuitive</li>
                         </ul>
                     </div>
                 </article>
@@ -169,21 +199,21 @@
                             <span class="placeholder-text">Suivi Commandes</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <span class="demo-badge">Démo</span>
+                            <span class="demo-badge" data-i18n="demo_badge">Démo</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-tool">Outil interne</span>
+                            <span class="tag tag-tool" data-i18n="tag_tool">Outil interne</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>Suivi Commandes</h3>
-                        <p>Tableau de bord pour un e-commerçant permettant de suivre les commandes, leur statut et les délais de livraison.</p>
+                        <h3 data-i18n="proj5_title">Suivi Commandes</h3>
+                        <p data-i18n="proj5_desc">Tableau de bord pour un e-commerçant permettant de suivre les commandes, leur statut et les délais de livraison.</p>
                         <ul class="portfolio-features">
-                            <li>Dashboard temps réel</li>
-                            <li>Statuts personnalisés</li>
-                            <li>Notifications</li>
-                            <li>Rapports automatiques</li>
+                            <li data-i18n="proj5_f1">Dashboard temps réel</li>
+                            <li data-i18n="proj5_f2">Statuts personnalisés</li>
+                            <li data-i18n="proj5_f3">Notifications</li>
+                            <li data-i18n="proj5_f4">Rapports automatiques</li>
                         </ul>
                     </div>
                 </article>
@@ -196,21 +226,21 @@
                             <span class="placeholder-text">Cabinet Droit</span>
                         </div>
                         <div class="portfolio-overlay">
-                            <span class="demo-badge">Démo</span>
+                            <span class="demo-badge" data-i18n="demo_badge">Démo</span>
                         </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-tags">
-                            <span class="tag tag-site">Site web</span>
+                            <span class="tag tag-site" data-i18n="tag_site">Site web</span>
                             <span class="tag tag-year">2025</span>
                         </div>
-                        <h3>Cabinet Maître Durand</h3>
-                        <p>Site professionnel pour un cabinet d'avocats avec présentation des domaines d'expertise et prise de rendez-vous.</p>
+                        <h3 data-i18n="proj6_title">Cabinet Maître Durand</h3>
+                        <p data-i18n="proj6_desc">Site professionnel pour un cabinet d'avocats avec présentation des domaines d'expertise et prise de rendez-vous.</p>
                         <ul class="portfolio-features">
-                            <li>Design sobre et professionnel</li>
-                            <li>Domaines d'expertise</li>
-                            <li>Prise de rendez-vous</li>
-                            <li>Section actualités</li>
+                            <li data-i18n="proj6_f1">Design sobre et professionnel</li>
+                            <li data-i18n="proj6_f2">Domaines d'expertise</li>
+                            <li data-i18n="proj6_f3">Prise de rendez-vous</li>
+                            <li data-i18n="proj6_f4">Section actualités</li>
                         </ul>
                     </div>
                 </article>
@@ -218,9 +248,9 @@
 
             <!-- CTA -->
             <div class="portfolio-cta">
-                <h3>Votre projet pourrait être ici</h3>
-                <p>Chaque projet est différent. Décrivez-nous le vôtre et recevez une estimation gratuite.</p>
-                <a href="devis.html" class="btn btn-primary btn-lg">Démarrer mon projet →</a>
+                <h3 data-i18n="portfolio_cta_title">Votre projet pourrait être ici</h3>
+                <p data-i18n="portfolio_cta_text">Chaque projet est différent. Décrivez-nous le vôtre et recevez une estimation gratuite.</p>
+                <a href="devis.html" class="btn btn-primary btn-lg" data-i18n="portfolio_cta_btn">Démarrer mon projet →</a>
             </div>
         </div>
     </section>
@@ -234,33 +264,34 @@
                         <span class="logo-icon">⚡</span>
                         <span class="logo-text">DevHub</span>
                     </a>
-                    <p>Solutions numériques clé en main pour entrepreneurs et PME.</p>
+                    <p data-i18n="footer_tagline">Solutions numériques clé en main pour entrepreneurs et PME.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>Navigation</h4>
+                        <h4 data-i18n="footer_nav">Navigation</h4>
                         <ul>
-                            <li><a href="index.html#services">Services</a></li>
-                            <li><a href="index.html#comment-ca-marche">Comment ça marche</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="index.html#faq">FAQ</a></li>
+                            <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+                            <li><a href="index.html#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+                            <li><a href="index.html#faq" data-i18n="nav_faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Légal</h4>
+                        <h4 data-i18n="footer_legal">Légal</h4>
                         <ul>
-                            <li><a href="mentions-legales.html">Mentions légales</a></li>
-                            <li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li>
+                            <li><a href="mentions-legales.html" data-i18n="footer_mentions">Mentions légales</a></li>
+                            <li><a href="mentions-legales.html#confidentialite" data-i18n="footer_privacy">Confidentialité</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 DevHub Agency. Tous droits réservés.</p>
+                <p data-i18n="footer_copyright">© 2025 DevHub Agency. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/portfolio.js"></script>
 </body>

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-page="index">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -18,12 +18,26 @@
                 <span class="logo-text">DevHub</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#comment-ca-marche">Comment ça marche</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                <li><a href="#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+                <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
             </ul>
-            <a href="devis.html" class="btn btn-primary">Obtenir une estimation</a>
+            <div class="nav-right">
+                <a href="devis.html" class="btn btn-primary" data-i18n="nav_cta">Obtenir une estimation</a>
+                <!-- Language Selector (Desktop) -->
+                <div class="lang-selector">
+                    <button class="lang-toggle" aria-label="Language">
+                        <span class="lang-current">FR</span>
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-btn active" data-lang="fr">🇫🇷 Français</button>
+                        <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+                        <button class="lang-btn" data-lang="es">🇪🇸 Español</button>
+                    </div>
+                </div>
+            </div>
             <button class="mobile-menu-btn" aria-label="Menu">
                 <span></span>
                 <span></span>
@@ -32,29 +46,45 @@
         </div>
     </nav>
 
+    <!-- Mobile Menu (includes language selector) -->
+    <div class="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+            <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+            <li><a href="devis.html" class="mobile-cta" data-i18n="nav_cta">Obtenir une estimation</a></li>
+        </ul>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="badge">🤖 Propulsé par l'IA</div>
-                <h1>Dites-nous ce dont vous avez besoin.<br><span class="highlight">Nous le construisons pour vous.</span></h1>
-                <p class="hero-subtitle">Sites web, outils internes, bases de données. Livrés rapidement, sans jargon technique. <strong>Vous êtes propriétaire à 100% du code.</strong></p>
+                <div class="badge" data-i18n="hero_badge">🤖 Propulsé par l'IA</div>
+                <h1><span data-i18n="hero_title">Dites-nous ce dont vous avez besoin.</span><br><span class="highlight" data-i18n="hero_title_highlight">Nous le construisons pour vous.</span></h1>
+                <p class="hero-subtitle"><span data-i18n="hero_subtitle">Sites web, outils internes, bases de données. Livrés rapidement, sans jargon technique.</span> <strong data-i18n="hero_subtitle_bold">Vous êtes propriétaire à 100% du code.</strong></p>
                 <div class="hero-cta">
-                    <a href="devis.html" class="btn btn-primary btn-lg">Décrire mon besoin →</a>
-                    <a href="#comment-ca-marche" class="btn btn-secondary btn-lg">Voir comment ça marche</a>
+                    <a href="devis.html" class="btn btn-primary btn-lg" data-i18n="hero_cta_primary">Décrire mon besoin →</a>
+                    <a href="#comment-ca-marche" class="btn btn-secondary btn-lg" data-i18n="hero_cta_secondary">Voir comment ça marche</a>
                 </div>
                 <div class="hero-trust">
                     <div class="trust-item">
                         <span class="trust-icon">✓</span>
-                        <span>Aucun abonnement</span>
+                        <span data-i18n="hero_trust_1">Aucun abonnement</span>
                     </div>
                     <div class="trust-item">
                         <span class="trust-icon">✓</span>
-                        <span>Code 100% à vous</span>
+                        <span data-i18n="hero_trust_2">Code 100% à vous</span>
                     </div>
                     <div class="trust-item">
                         <span class="trust-icon">✓</span>
-                        <span>3 modifications incluses</span>
+                        <span data-i18n="hero_trust_3">3 modifications incluses</span>
                     </div>
                 </div>
             </div>
@@ -66,11 +96,11 @@
                         <span class="dot green"></span>
                     </div>
                     <div class="visual-content">
-                        <div class="code-line"><span class="code-comment">// Votre projet</span></div>
+                        <div class="code-line"><span class="code-comment" data-i18n="visual_comment">// Votre projet</span></div>
                         <div class="code-line"><span class="code-keyword">const</span> projet = {</div>
-                        <div class="code-line indent"><span class="code-prop">type</span>: <span class="code-string">"site-vitrine"</span>,</div>
-                        <div class="code-line indent"><span class="code-prop">délai</span>: <span class="code-string">"rapide"</span>,</div>
-                        <div class="code-line indent"><span class="code-prop">propriétaire</span>: <span class="code-string">"vous"</span></div>
+                        <div class="code-line indent"><span class="code-prop">type</span>: <span class="code-string">"<span data-i18n="visual_type">site-vitrine</span>"</span>,</div>
+                        <div class="code-line indent"><span class="code-prop">délai</span>: <span class="code-string">"<span data-i18n="visual_delay">rapide</span>"</span>,</div>
+                        <div class="code-line indent"><span class="code-prop">propriétaire</span>: <span class="code-string">"<span data-i18n="visual_owner">vous</span>"</span></div>
                         <div class="code-line">};</div>
                     </div>
                 </div>
@@ -83,7 +113,7 @@
         <div class="container">
             <div class="transparency-content">
                 <span class="transparency-icon">🤝</span>
-                <p><strong>Transparence totale :</strong> Nous utilisons l'intelligence artificielle pour travailler plus vite et mieux. C'est notre avantage. Chaque projet est supervisé et validé par un humain.</p>
+                <p><strong data-i18n="transparency_bold">Transparence totale :</strong> <span data-i18n="transparency_text">Nous utilisons l'intelligence artificielle pour travailler plus vite et mieux. C'est notre avantage. Chaque projet est supervisé et validé par un humain.</span></p>
             </div>
         </div>
     </section>
@@ -92,48 +122,48 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Ce qu'on peut construire pour vous</h2>
-                <p>Des solutions simples et efficaces, adaptées à votre activité</p>
+                <h2 data-i18n="services_title">Ce qu'on peut construire pour vous</h2>
+                <p data-i18n="services_subtitle">Des solutions simples et efficaces, adaptées à votre activité</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">🌐</div>
-                    <h3>Sites internet</h3>
-                    <p>Landing pages, sites vitrines. Modernes, rapides, optimisés mobile. Parfaits pour présenter votre activité.</p>
+                    <h3 data-i18n="service_1_title">Sites internet</h3>
+                    <p data-i18n="service_1_desc">Landing pages, sites vitrines. Modernes, rapides, optimisés mobile. Parfaits pour présenter votre activité.</p>
                     <ul class="service-features">
-                        <li>Design professionnel</li>
-                        <li>Responsive (mobile-friendly)</li>
-                        <li>Formulaire de contact</li>
+                        <li data-i18n="service_1_f1">Design professionnel</li>
+                        <li data-i18n="service_1_f2">Responsive (mobile-friendly)</li>
+                        <li data-i18n="service_1_f3">Formulaire de contact</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🗄️</div>
-                    <h3>Bases de données</h3>
-                    <p>Organisez vos clients, produits, réservations. Interface simple pour gérer vos données au quotidien.</p>
+                    <h3 data-i18n="service_2_title">Bases de données</h3>
+                    <p data-i18n="service_2_desc">Organisez vos clients, produits, réservations. Interface simple pour gérer vos données au quotidien.</p>
                     <ul class="service-features">
-                        <li>Interface intuitive</li>
-                        <li>Recherche et filtres</li>
-                        <li>Export des données</li>
+                        <li data-i18n="service_2_f1">Interface intuitive</li>
+                        <li data-i18n="service_2_f2">Recherche et filtres</li>
+                        <li data-i18n="service_2_f3">Export des données</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Outils internes</h3>
-                    <p>Automatisez vos tâches répétitives. Gestion clients, suivi commandes, tableaux de bord personnalisés.</p>
+                    <h3 data-i18n="service_3_title">Outils internes</h3>
+                    <p data-i18n="service_3_desc">Automatisez vos tâches répétitives. Gestion clients, suivi commandes, tableaux de bord personnalisés.</p>
                     <ul class="service-features">
-                        <li>Sur-mesure</li>
-                        <li>Gain de temps</li>
-                        <li>Zéro paperasse</li>
+                        <li data-i18n="service_3_f1">Sur-mesure</li>
+                        <li data-i18n="service_3_f2">Gain de temps</li>
+                        <li data-i18n="service_3_f3">Zéro paperasse</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🔄</div>
-                    <h3>Recréation de site</h3>
-                    <p>Votre site actuel ne vous convient plus ? On repart de zéro sur une base propre, moderne et maintenable.</p>
+                    <h3 data-i18n="service_4_title">Recréation de site</h3>
+                    <p data-i18n="service_4_desc">Votre site actuel ne vous convient plus ? On repart de zéro sur une base propre, moderne et maintenable.</p>
                     <ul class="service-features">
-                        <li>Base neuve et propre</li>
-                        <li>Design actualisé</li>
-                        <li>Code que vous possédez</li>
+                        <li data-i18n="service_4_f1">Base neuve et propre</li>
+                        <li data-i18n="service_4_f2">Design actualisé</li>
+                        <li data-i18n="service_4_f3">Code que vous possédez</li>
                     </ul>
                 </div>
             </div>
@@ -144,36 +174,36 @@
     <section id="comment-ca-marche" class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2>Comment ça marche</h2>
-                <p>3 étapes simples pour obtenir votre solution</p>
+                <h2 data-i18n="how_title">Comment ça marche</h2>
+                <p data-i18n="how_subtitle">3 étapes simples pour obtenir votre solution</p>
             </div>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Décrivez votre besoin</h3>
-                        <p>Répondez à quelques questions simples. Pas besoin de termes techniques, expliquez-nous ce que vous voulez accomplir.</p>
+                        <h3 data-i18n="how_step1_title">Décrivez votre besoin</h3>
+                        <p data-i18n="how_step1_desc">Répondez à quelques questions simples. Pas besoin de termes techniques, expliquez-nous ce que vous voulez accomplir.</p>
                     </div>
                 </div>
                 <div class="step-arrow">→</div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>Recevez une estimation</h3>
-                        <p>Une fourchette de prix immédiate, puis une validation humaine sous 24h avec un devis précis.</p>
+                        <h3 data-i18n="how_step2_title">Recevez une estimation</h3>
+                        <p data-i18n="how_step2_desc">Une fourchette de prix immédiate, puis une validation humaine sous 24h avec un devis précis.</p>
                     </div>
                 </div>
                 <div class="step-arrow">→</div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>On construit, vous recevez</h3>
-                        <p>Paiement à la commande. Livraison rapide. 3 modifications incluses. Le code est à vous.</p>
+                        <h3 data-i18n="how_step3_title">On construit, vous recevez</h3>
+                        <p data-i18n="how_step3_desc">Paiement à la commande. Livraison rapide. 3 modifications incluses. Le code est à vous.</p>
                     </div>
                 </div>
             </div>
             <div class="cta-center">
-                <a href="devis.html" class="btn btn-primary btn-lg">Commencer maintenant →</a>
+                <a href="devis.html" class="btn btn-primary btn-lg" data-i18n="how_cta">Commencer maintenant →</a>
             </div>
         </div>
     </section>
@@ -183,29 +213,29 @@
         <div class="container">
             <div class="advantages-grid">
                 <div class="advantage-main">
-                    <h2>Pourquoi nous choisir ?</h2>
-                    <p class="advantage-subtitle">Pas d'enfermement. Pas de surprise. Pas de jargon.</p>
+                    <h2 data-i18n="adv_title">Pourquoi nous choisir ?</h2>
+                    <p class="advantage-subtitle" data-i18n="adv_subtitle">Pas d'enfermement. Pas de surprise. Pas de jargon.</p>
                 </div>
                 <div class="advantage-cards">
                     <div class="advantage-card">
                         <div class="advantage-icon">🔓</div>
-                        <h4>100% propriétaire</h4>
-                        <p>Le code vous appartient entièrement. Pas de dépendance à une plateforme, pas d'abonnement obligatoire.</p>
+                        <h4 data-i18n="adv_1_title">100% propriétaire</h4>
+                        <p data-i18n="adv_1_desc">Le code vous appartient entièrement. Pas de dépendance à une plateforme, pas d'abonnement obligatoire.</p>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-icon">💰</div>
-                        <h4>Prix transparent</h4>
-                        <p>Estimation immédiate + devis clair. Paiement unique à la commande. Seul coût futur : hébergement (~5-15€/mois).</p>
+                        <h4 data-i18n="adv_2_title">Prix transparent</h4>
+                        <p data-i18n="adv_2_desc">Estimation immédiate + devis clair. Paiement unique à la commande. Seul coût futur : hébergement (~5-15€/mois).</p>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-icon">⚡</div>
-                        <h4>Livraison rapide</h4>
-                        <p>L'IA nous permet d'aller vite sans sacrifier la qualité. Chaque projet est supervisé humainement.</p>
+                        <h4 data-i18n="adv_3_title">Livraison rapide</h4>
+                        <p data-i18n="adv_3_desc">L'IA nous permet d'aller vite sans sacrifier la qualité. Chaque projet est supervisé humainement.</p>
                     </div>
                     <div class="advantage-card">
                         <div class="advantage-icon">🛡️</div>
-                        <h4>Cadre clair</h4>
-                        <p>3 modifications gratuites incluses. Au-delà, devis supplémentaire. Pas d'allers-retours infinis.</p>
+                        <h4 data-i18n="adv_4_title">Cadre clair</h4>
+                        <p data-i18n="adv_4_desc">3 modifications gratuites incluses. Au-delà, devis supplémentaire. Pas d'allers-retours infinis.</p>
                     </div>
                 </div>
             </div>
@@ -216,61 +246,61 @@
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
-                <h2>Questions fréquentes</h2>
+                <h2 data-i18n="faq_title">Questions fréquentes</h2>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Vous utilisez vraiment l'IA ?</span>
+                        <span data-i18n="faq_q1">Vous utilisez vraiment l'IA ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Oui, et on l'assume. L'IA nous permet de travailler plus vite et de proposer des prix accessibles. Mais chaque projet est supervisé et validé par un humain. On ne livre jamais quelque chose qu'on ne maîtrise pas.</p>
+                        <p data-i18n="faq_a1">Oui, et on l'assume. L'IA nous permet de travailler plus vite et de proposer des prix accessibles. Mais chaque projet est supervisé et validé par un humain. On ne livre jamais quelque chose qu'on ne maîtrise pas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Le code m'appartient vraiment ?</span>
+                        <span data-i18n="faq_q2">Le code m'appartient vraiment ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>À 100%. Contrairement à Wix, Squarespace ou autres, vous recevez le code source complet. Vous pouvez le faire évoluer par quelqu'un d'autre, le déplacer, le modifier. Aucun enfermement.</p>
+                        <p data-i18n="faq_a2">À 100%. Contrairement à Wix, Squarespace ou autres, vous recevez le code source complet. Vous pouvez le faire évoluer par quelqu'un d'autre, le déplacer, le modifier. Aucun enfermement.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Combien ça coûte après ?</span>
+                        <span data-i18n="faq_q3">Combien ça coûte après ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Seulement l'hébergement : entre 5€ et 15€/mois selon vos besoins. On peut vous recommander des solutions ou vous laissez choisir. Pas d'abonnement chez nous.</p>
+                        <p data-i18n="faq_a3">Seulement l'hébergement : entre 5€ et 15€/mois selon vos besoins. On peut vous recommander des solutions ou vous laissez choisir. Pas d'abonnement chez nous.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Et si je veux des modifications ?</span>
+                        <span data-i18n="faq_q4">Et si je veux des modifications ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>3 modifications sont incluses dans le prix initial. Au-delà, on vous fait un devis pour les changements supplémentaires. C'est clair dès le départ.</p>
+                        <p data-i18n="faq_a4">3 modifications sont incluses dans le prix initial. Au-delà, on vous fait un devis pour les changements supplémentaires. C'est clair dès le départ.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>J'ai déjà un site, vous pouvez l'améliorer ?</span>
+                        <span data-i18n="faq_q5">J'ai déjà un site, vous pouvez l'améliorer ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>On ne modifie pas le code existant (trop de risques). Par contre, on peut recréer votre site sur une base neuve, propre et moderne. Vous gardez votre contenu, on refait la structure.</p>
+                        <p data-i18n="faq_a5">On ne modifie pas le code existant (trop de risques). Par contre, on peut recréer votre site sur une base neuve, propre et moderne. Vous gardez votre contenu, on refait la structure.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Comment se passe le paiement ?</span>
+                        <span data-i18n="faq_q6">Comment se passe le paiement ?</span>
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>100% à la commande, après validation du devis. On ne commence qu'une fois le paiement reçu. Simple et sans surprise.</p>
+                        <p data-i18n="faq_a6">100% à la commande, après validation du devis. On ne commence qu'une fois le paiement reçu. Simple et sans surprise.</p>
                     </div>
                 </div>
             </div>
@@ -281,9 +311,9 @@
     <section class="cta-final">
         <div class="container">
             <div class="cta-content">
-                <h2>Prêt à démarrer ?</h2>
-                <p>Décrivez votre projet en 2 minutes. Recevez une estimation immédiate.</p>
-                <a href="devis.html" class="btn btn-white btn-lg">Obtenir une estimation →</a>
+                <h2 data-i18n="cta_title">Prêt à démarrer ?</h2>
+                <p data-i18n="cta_subtitle">Décrivez votre projet en 2 minutes. Recevez une estimation immédiate.</p>
+                <a href="devis.html" class="btn btn-white btn-lg" data-i18n="cta_btn">Obtenir une estimation →</a>
             </div>
         </div>
     </section>
@@ -297,33 +327,34 @@
                         <span class="logo-icon">⚡</span>
                         <span class="logo-text">DevHub</span>
                     </a>
-                    <p>Solutions numériques clé en main pour entrepreneurs et PME.</p>
+                    <p data-i18n="footer_tagline">Solutions numériques clé en main pour entrepreneurs et PME.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>Navigation</h4>
+                        <h4 data-i18n="footer_nav">Navigation</h4>
                         <ul>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#comment-ca-marche">Comment ça marche</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+                            <li><a href="#comment-ca-marche" data-i18n="nav_how">Comment ça marche</a></li>
+                            <li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+                            <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Légal</h4>
+                        <h4 data-i18n="footer_legal">Légal</h4>
                         <ul>
-                            <li><a href="mentions-legales.html">Mentions légales</a></li>
-                            <li><a href="mentions-legales.html#confidentialite">Confidentialité</a></li>
+                            <li><a href="mentions-legales.html" data-i18n="footer_mentions">Mentions légales</a></li>
+                            <li><a href="mentions-legales.html#confidentialite" data-i18n="footer_privacy">Confidentialité</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 DevHub Agency. Tous droits réservés.</p>
+                <p data-i18n="footer_copyright">© 2025 DevHub Agency. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

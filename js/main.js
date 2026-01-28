@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle
     initMobileMenu();
     
+    // Language Selector
+    initLangSelector();
+    
     // FAQ Accordion
     initFAQ();
     
@@ -21,22 +24,100 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 function initMobileMenu() {
     const menuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const navLinks = document.querySelector('.nav-links'); // For backward compatibility
     
-    if (!menuBtn || !navLinks) return;
+    if (!menuBtn) return;
     
     menuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
         menuBtn.classList.toggle('active');
+        
+        // Support both old and new mobile nav structures
+        if (mobileNav) {
+            mobileNav.classList.toggle('active');
+        }
+        if (navLinks) {
+            navLinks.classList.toggle('active');
+        }
     });
     
     // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
+    const allLinks = document.querySelectorAll('.mobile-nav a, .nav-links a');
+    allLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
             menuBtn.classList.remove('active');
+            if (mobileNav) mobileNav.classList.remove('active');
+            if (navLinks) navLinks.classList.remove('active');
         });
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuBtn.contains(e.target) && 
+            (!mobileNav || !mobileNav.contains(e.target)) &&
+            (!navLinks || !navLinks.contains(e.target))) {
+            menuBtn.classList.remove('active');
+            if (mobileNav) mobileNav.classList.remove('active');
+            if (navLinks) navLinks.classList.remove('active');
+        }
+    });
+}
+
+/**
+ * Language Selector
+ */
+function initLangSelector() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const langToggle = document.querySelector('.lang-toggle');
+    const langCurrent = document.querySelector('.lang-current');
+    
+    // Update current language display
+    function updateLangDisplay(lang) {
+        if (langCurrent) {
+            langCurrent.textContent = lang.toUpperCase();
+        }
+        
+        // Update all lang buttons active state
+        langButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+    }
+    
+    // Set initial display
+    const currentLang = localStorage.getItem('devhub-lang') || 'fr';
+    updateLangDisplay(currentLang);
+    
+    // Handle language button clicks
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            if (typeof setLanguage === 'function') {
+                setLanguage(lang);
+            }
+            updateLangDisplay(lang);
+            
+            // Close mobile menu if open
+            const mobileNav = document.querySelector('.mobile-nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            if (mobileNav) mobileNav.classList.remove('active');
+            if (menuBtn) menuBtn.classList.remove('active');
+        });
+    });
+    
+    // Desktop dropdown toggle on click (for touch devices)
+    if (langToggle) {
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langToggle.closest('.lang-selector').classList.toggle('open');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.lang-selector').forEach(el => {
+                el.classList.remove('open');
+            });
+        });
+    }
 }
 
 /**
@@ -47,6 +128,8 @@ function initFAQ() {
     
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        
+        if (!question) return;
         
         question.addEventListener('click', () => {
             // Close all other items
@@ -76,7 +159,8 @@ function initSmoothScroll() {
             
             e.preventDefault();
             
-            const navHeight = document.querySelector('.navbar').offsetHeight;
+            const navbar = document.querySelector('.navbar');
+            const navHeight = navbar ? navbar.offsetHeight : 70;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
             
             window.scrollTo({
@@ -94,8 +178,6 @@ function initNavbarScroll() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
     
-    let lastScroll = 0;
-    
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
@@ -104,49 +186,5 @@ function initNavbarScroll() {
         } else {
             navbar.style.boxShadow = 'none';
         }
-        
-        lastScroll = currentScroll;
     });
 }
-
-// Add mobile menu styles dynamically
-const mobileStyles = document.createElement('style');
-mobileStyles.textContent = `
-    @media (max-width: 768px) {
-        .nav-links {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: white;
-            flex-direction: column;
-            padding: 24px;
-            gap: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transform: translateY(-100%);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links.active {
-            display: flex;
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: all;
-        }
-        
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-    }
-`;
-document.head.appendChild(mobileStyles);
